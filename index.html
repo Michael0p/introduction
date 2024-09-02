@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .info-container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .info-item {
+            margin-bottom: 10px;
+        }
+        .info-item strong {
+            color: #3498db;
+        }
+        .hobbies-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .hobbies-list li {
+            background-color: #ecf0f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .hobbies-list li:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+        #hobby-details {
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="info-container">
+        <h1>Hello, I'm Suyash Prabhu!</h1>
+        <div class="info-item"><strong>Class:</strong> First Year Computer Science</div>
+        <div class="info-item"><strong>Roll Number:</strong> 2407041</div>
+        <div class="info-item"><strong>Department:</strong> Computer Science</div>
+        <div class="info-item">
+            <strong>Hobbies:</strong>
+            <ul class="hobbies-list">
+                <li data-description="Learning new dance styles, practicing routines, or just dancing for fun.">Dance</li>
+                <li data-description="Building software is my passion.">Coding</li>
+                <li data-description="Participating in local theater, acting classes, or creating your own performances.">Drama</li>
+                <li data-description="Developing ideas, building products, or growing your own business.">Curating Startup Ideas</li>
+            </ul>
+        </div>
+        <div id="hobby-details"></div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.hobbies-list li').forEach(item => {
+            item.addEventListener('click', function() {
+                const description = this.getAttribute('data-description');
+                const hobbyDetails = document.getElementById('hobby-details');
+                hobbyDetails.textContent = `${this.textContent}: ${description}`;
+            });
+        });
+    </script>
+</body>
+</html>
